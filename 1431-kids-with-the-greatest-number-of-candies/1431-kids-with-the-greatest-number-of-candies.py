@@ -1,9 +1,6 @@
+'''
 class Solution:
     def kidsWithCandies(self, candies: List[int], extraCandies: int) -> List[bool]:
-        '''
-        # 접근법
-        - 걍 완탐
-        '''
         num = len(candies)
         rslt = [True] * num
         
@@ -15,4 +12,18 @@ class Solution:
                     rslt[i] = False
                     break
             
+        return rslt
+'''
+class Solution:
+    def kidsWithCandies(self, candies: List[int], extraCandies: int) -> List[bool]:
+        # find max
+        maxCandies = max(candies)
+
+        # find if target
+        rslt = [False]*len(candies)
+        
+        for i in range(len(candies)):
+            if candies[i] + extraCandies >= maxCandies:
+                rslt[i] = True
+        
         return rslt
