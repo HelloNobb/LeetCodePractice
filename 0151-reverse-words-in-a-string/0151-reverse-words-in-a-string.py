@@ -1,5 +1,11 @@
 class Solution:
     def reverseWords(self, s: str) -> str:
+        return ' '.join(s.split()[::-1]) #뒤집기->공백무시 단어단위 자르기->공백단위합치기
+
+
+''' ### 수동 풀이법 (2번 방식)
+class Solution:
+    def reverseWords(self, s: str) -> str:
         sList = list(s)
 
         words = []
@@ -20,6 +26,8 @@ class Solution:
         rslt = " ".join(words[::-1])
         
         return rslt
+'''
+
 '''         
 ## 접근 계획
 - 스택: ["하늘은", "매우", "파랗다"] -> 파랗다, 매우, 하늘은
